@@ -6,12 +6,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [Range(0f, 1f)]
+    public float rotProgress = 0;
     [SerializeField]
     private Spline spline;
     SplineExtrusion extr;
 
-    [Range(0f, 2f)]
-    public float progress = 0;
+    private float progress = 0;
 
     private void Start()
     {
@@ -26,8 +27,20 @@ public class PlayerController : MonoBehaviour
             progress = 0f;
         }
         CurveSample sample = spline.GetSampleAtDistance(progress);
-        transform.localPosition = sample.location;
-        transform.localRotation = sample.Rotation;
+        Debug.Log(sample.Rotation);
+        transform.position = sample.location;
+        transform.rotation = sample.Rotation;
+        float radius = 1f;
+        var sPos = Vector3.zero;
+        var angle1 = Mathf.Lerp(0f, 2 * Mathf.PI, rotProgress);
+        sPos.x += radius * Mathf.Sin(angle1);
+        sPos.y += radius * Mathf.Cos(angle1);
+        sPos.z += 0;
+        sPos =  sample.Rotation * sPos; 
+
+
+
+        transform.position += sPos;
     }
 
 
