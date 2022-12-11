@@ -247,33 +247,53 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodes:
-  - position: {x: 5, y: 0, z: 0}
-    direction: {x: 5, y: 0, z: -3}
+  - position: {x: 0, y: 0, z: 0}
+    direction: {x: 0, y: 0, z: 2}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 1, y: 1}
     roll: 0
-  - position: {x: 10, y: 0, z: 0}
-    direction: {x: 10, y: 0, z: 3}
+  - position: {x: 0, y: 0, z: 10}
+    direction: {x: 0, y: 0, z: 10}
+    up: {x: 0, y: 1, z: 0}
+    scale: {x: 1, y: 1}
+    roll: 0
+  - position: {x: -10, y: 0, z: 20}
+    direction: {x: -12, y: 0, z: 22}
     up: {x: 0, y: 1, z: 0}
     scale: {x: 1, y: 1}
     roll: 0
   curves:
   - n1:
-      position: {x: 5, y: 0, z: 0}
-      direction: {x: 5, y: 0, z: -3}
+      position: {x: 0, y: 0, z: 0}
+      direction: {x: 0, y: 0, z: 2}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 1, y: 1}
       roll: 0
     n2:
-      position: {x: 10, y: 0, z: 0}
-      direction: {x: 10, y: 0, z: 3}
+      position: {x: 0, y: 0, z: 10}
+      direction: {x: 0, y: 0, z: 10}
       up: {x: 0, y: 1, z: 0}
       scale: {x: 1, y: 1}
       roll: 0
     Changed:
       m_PersistentCalls:
         m_Calls: []
-  Length: 7.5348897
+  - n1:
+      position: {x: 0, y: 0, z: 10}
+      direction: {x: 0, y: 0, z: 10}
+      up: {x: 0, y: 1, z: 0}
+      scale: {x: 1, y: 1}
+      roll: 0
+    n2:
+      position: {x: -10, y: 0, z: 20}
+      direction: {x: -12, y: 0, z: 22}
+      up: {x: 0, y: 1, z: 0}
+      scale: {x: 1, y: 1}
+      roll: 0
+    Changed:
+      m_PersistentCalls:
+        m_Calls: []
+  Length: 24.142136
   isLoop: 0
   CurveChanged:
     m_PersistentCalls:
@@ -405,12 +425,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56a9e9da26c5abd43bac534bfb526869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialPlayerSpeed: 10
-  _maximumPlayerSpeed: 30
-  _playerSpeedIncreaseRate: 0.1
-  deviation: 0
-  block: {fileID: 2099283009}
-  posOnPath: {x: 0, y: 0, z: 0}
+  spline: {fileID: 819302390}
+  progress: 0
 --- !u!54 &855101441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -589,7 +605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2099283009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -597,7 +613,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099283008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18b1be262960a5e49b825c6b85b76773, type: 3}
   m_Name: 
